@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+  <link rel="stylesheet" href="src/styles.css" />
+  <script src="https://kit.fontawesome.com/2774e5b499.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <div class="container border shadow rounded">
+    <div class="search-bar" id="search-bar">
+      <form id="search-engine">
+        <input autocomplete="off" class="form-control" id="form-control" type="text"
+          placeholder="Enter City or Set to Current Location" aria-label="Search" />
+        <button id="search-icon">
+          <i class="fas fa-search"></i>
+        </button>
+        <button id="current-location-button" type="button">
+          <i class="fas fa-map-marker-alt id=" location-pin"></i>
+        </button>
+      </form>
+    </div>
+    <div class="button-container">
+      <button class="buttons-wrapper">
+        <a href="#" id="celsius-link">˚C</a> |
+        <a href="#" id="fahrenheit-link">˚F</a>
+      </button>
+    </div>
+    <h1 class="date" id="date">
+      <small>Sunday, October 18, 2020</small>
+    </h1>
+    <h2 class="gradient-text" id="city">
+      <strong>Toronto</strong>
+    </h2>
+    <div class="row">
+      <div class="col-6">
+        <img src="images/Cloud Weather Sketch.png" class="cloudy" alt="Cloudy Weather" />
+      </div>
+      <div class="col-6">
+        <ul>
+          <li> <span id="current-forecast"><strong>Cloudy</strong></span></li>
+          <li>
+            <h3 class="temperature" id="temperature">17˚C</h3>
+          </li>
+          <li id="high-low">H:14˚| L:7˚</li>
+          <li>Humidity: <span id="humidity">59</span>%</li>
+          <li>Wind: <span id="wind">14</span> km/h</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <h4>Monday</h4>
+        <img src="images/Rainy Cloud Weather Sketch.png" alt="Rainy Weather" />
+        <h5>H: 9˚| L: 6˚</h5>
+      </div>
+      <div class="col-sm">
+        <h4>Tuesday</h4>
+        <img src="images/Partly Sunny Weather Sketch.png" class="sunny" alt="Partly Sunny Weather" />
+        <h5>H: 9˚| L: 8˚</h5>
+      </div>
+      <div class="col-sm">
+        <h4>Wednesday</h4>
+        <img src="images/Rainy Cloud Weather Sketch.png" alt="Rainy Weather" />
+        <h5>H: 16˚| L: 10˚</h5>
+      </div>
+      <div class="col-sm">
+        <h4>Thursday</h4>
+        <img src="images/Rainy Cloud Weather Sketch.png" alt="Rainy Weather" />
+        <h5>H: 14˚| L: 13˚</h5>
+      </div>
+      <div class="col-sm">
+        <h4>Friday</h4>
+        <img src="images/Partly Sunny Weather Sketch.png" class="sunny" alt="Partly Sunny Weather" />
+        <h5>H: 20˚| L: 10˚</h5>
+      </div>
+    </div>
+  </div>
+  <script src="src/index.js"></script>
+</body>
+
+</html>
