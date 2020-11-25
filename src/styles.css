@@ -149,3 +149,9 @@ img {
 #celsius-link {
   color: #ffffff;
 }
+
+#open-source-link {
+  text-align: left;
+  display: block;
+  margin: 0 150px;
+}
