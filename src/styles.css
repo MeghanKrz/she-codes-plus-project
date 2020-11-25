@@ -150,6 +150,10 @@ img {
   color: #ffffff;
 }
 
+#current-forecast {
+  text-transform: capitalize;
+}
+
 #open-source-link {
   text-align: left;
   display: block;
