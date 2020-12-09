@@ -64,10 +64,17 @@ function showTemperature(response) {
 let form = document.querySelector("#search-engine");
 form.addEventListener("submit", search);
 
+function displayForecast(response) {
+  console.log(response.data);
+}
+
 function searchCity(city) {
   let apiKey = "a8a1818007f030896cae1dd1219319f0";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function search(event) {
