@@ -65,7 +65,7 @@ let form = document.querySelector("#search-engine");
 form.addEventListener("submit", search);
 
 function displayForecast(response) {
-  console.log(response.data);
+  console.log(response.data.list[0]);
 }
 
 function searchCity(city) {
