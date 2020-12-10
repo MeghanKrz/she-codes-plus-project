@@ -46,6 +46,7 @@ function showTemperature(response) {
   celsiusTemperature = Math.round(response.data.main.temp);
   let celsiusTemperatureHigh = Math.round(response.data.main.temp_max);
   let celsiusTemperatureLow = Math.round(response.data.main.temp_min);
+  let iconElement = document.querySelector(response.data.weather.icon);
   document.querySelector(
     "#city"
   ).innerHTML = `<strong>${response.data.name}</strong>`;
@@ -60,17 +61,15 @@ function showTemperature(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document
+    .querySelector("#current-icon")
+    .setAttribute("src", `images/${response.data.weather[0].icon}.png`);
 }
 let form = document.querySelector("#search-engine");
 form.addEventListener("submit", search);
 
 function displayForecast(response) {
   console.log(response.data.list[0]);
-}
-function showWeather(response) {
-  document
-    .querySelector("#current-icon")
-    .setAttribute("src", `images/${response.data.weather[0].icon}.png`);
 }
 
 function searchCity(city) {
