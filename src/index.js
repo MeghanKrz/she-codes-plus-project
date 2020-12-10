@@ -67,6 +67,11 @@ form.addEventListener("submit", search);
 function displayForecast(response) {
   console.log(response.data.list[0]);
 }
+function showWeather(response) {
+  document
+    .querySelector("#current-icon")
+    .setAttribute("src", `images/${response.data.weather[0].icon}.png`);
+}
 
 function searchCity(city) {
   let apiKey = "a8a1818007f030896cae1dd1219319f0";
