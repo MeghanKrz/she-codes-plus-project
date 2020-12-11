@@ -70,18 +70,22 @@ form.addEventListener("submit", search);
 
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  let forecast = response.data.list[0];
+  forecastElement.innerHTML = null;
+  let forecast = null;
 
-  forecastElement.innerHTML = `<div class="col-sm">
+  for (let index = 6; index <= 48; index += 8) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `<div class="col-sm">
           <h4 id="second-day">${day}</h4>
           <img src="images/${
             forecast.weather[0].icon
           }.png" alt="Rainy Weather" id="second-day-icon" />
           <h5>H: ${Math.round(forecast.main.temp_max)}˚| L: ${Math.round(
-    forecast.main.temp_min
-  )}˚</h5>
+      forecast.main.temp_min
+    )}˚</h5>
         </div>
         </div>`;
+  }
 }
 
 function searchCity(city) {
