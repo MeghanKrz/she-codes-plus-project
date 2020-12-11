@@ -71,13 +71,12 @@ form.addEventListener("submit", search);
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecast = response.data.list[0];
-  console.log(forecast);
 
   forecastElement.innerHTML = `<div class="col-sm">
           <h4 id="second-day">${day}</h4>
           <img src="images/${
             forecast.weather[0].icon
-          }.png" alt="Rainy Weather" />
+          }.png" alt="Rainy Weather" id="second-day-icon" />
           <h5>H: ${Math.round(forecast.main.temp_max)}˚| L: ${Math.round(
     forecast.main.temp_min
   )}˚</h5>
