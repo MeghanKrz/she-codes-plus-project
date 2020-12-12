@@ -73,10 +73,11 @@ function displayForecast(response) {
   forecastElement.innerHTML = null;
   let forecast = null;
 
-  for (let index = 6; index <= 48; index += 8) {
+  for (let index = 6; index <= 39; index += 8) {
     forecast = response.data.list[index];
+    let forecastDay = new Date(forecast.dt * 1000);
     forecastElement.innerHTML += `<div class="col-sm">
-          <h4 id="second-day">${day}</h4>
+          <h4 id="second-day">${days[forecastDay.getDay()]}</h4>
           <img src="images/${
             forecast.weather[0].icon
           }.png" alt="Rainy Weather" id="second-day-icon" />
