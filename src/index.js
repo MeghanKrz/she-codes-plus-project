@@ -46,7 +46,6 @@ function showTemperature(response) {
   celsiusTemperature = Math.round(response.data.main.temp);
   let celsiusTemperatureHigh = Math.round(response.data.main.temp_max);
   let celsiusTemperatureLow = Math.round(response.data.main.temp_min);
-  let iconElement = document.querySelector(response.data.weather.icon);
   document.querySelector(
     "#city"
   ).innerHTML = `<strong>${response.data.name}</strong>`;
